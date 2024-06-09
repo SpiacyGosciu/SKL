@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Baza Danych Lokalizacji - SKL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+        }
+        .sidebar {
+            background-color: #fff;
+            padding: 10px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+            width: 200px;
+        }
+        .content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .data-table {
+            flex: 1;
+            margin-left: 20px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1, h2 {
+            margin-top: 0;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f4f4f4;
+            cursor: pointer;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .sidebar a.active {
+            background-color: #f4f4f4;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">SKL</div>
+        <div>
+            <span>jan.kowalski@winotex.pl</span>
+            <a href="index.html" class="btn">Wyloguj się</a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="sidebar">
+            <a href="employee-interface.html">Beczki</a>
+            <a href="#" class="active">Lokalizacje</a>
+        </div>
+        <div class="data-table">
+            <h2>Baza danych - Lokalizacje</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>nrPiwnicy</th>
+                        <th>nrRzedu</th>
+                        <th>czyZajete</th>
+                        <th>nrBeczki</th>
+                        <th>Akcje</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>true</td>
+                        <td>1</td>
+                        <td><a href="edit-location.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>true</td>
+                        <td>2</td>
+                        <td><a href="edit-location.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <!-- Additional rows for locations -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>

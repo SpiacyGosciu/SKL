@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edytuj Beczki - SKL</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            text-align: center;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        input[type="text"], input[type="date"], input[type="number"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin: 10px 0;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            margin-top: 10px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Edytuj Beczki</h1>
+        <form id="edit-barrel-form">
+            <input type="text" id="edit-nrBeczki" placeholder="Numer Beczki" required>
+            <input type="text" id="edit-rodzajBeczki" placeholder="Rodzaj Beczki" required>
+            <input type="text" id="edit-rodzajWina" placeholder="Rodzaj Wina" required>
+            <label for="edit-dataRozpoczecia">Data Rozpoczęcia:</label>
+            <input type="date" id="edit-dataRozpoczecia" required>
+            <label for="edit-ileLezakowac">Ile Leżakować (w latach):</label>
+            <input type="number" id="edit-ileLezakowac" placeholder="Ile Leżakować (w latach)" required>
+            <button type="submit" class="btn">Zapisz zmiany</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('edit-barrel-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            alert('Zmiany zapisane');
+            window.location.href = 'employee-interface.html';
+        });
+    </script>
+</body>
+</html>
