@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pl">
 <head>
@@ -21,18 +22,18 @@
             background-color: #333;
             color: #fff;
         }
-        .content {
-            display: flex;
-            flex: 1;
-            padding: 20px;
-        }
         .sidebar {
             background-color: #fff;
             padding: 10px;
             box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
             width: 200px;
         }
-        .main-content {
+        .content {
+            display: flex;
+            flex: 1;
+            padding: 20px;
+        }
+        .data-table {
             flex: 1;
             margin-left: 20px;
             background-color: #fff;
@@ -41,20 +42,6 @@
         }
         h1, h2 {
             margin-top: 0;
-        }
-        .btn {
-            background-color: #333;
-            color: #fff;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-        .btn:hover {
-            background-color: #555;
         }
         table {
             width: 100%;
@@ -70,6 +57,31 @@
         th {
             background-color: #f4f4f4;
             cursor: pointer;
+        }
+        .btn {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            margin-right: 10px;
+        }
+        .btn:hover {
+            background-color: #555;
+        }
+        .sidebar a {
+            display: block;
+            padding: 10px;
+            text-decoration: none;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .sidebar a.active {
+            background-color: #f4f4f4;
+            font-weight: bold;
         }
         /* Modal styles */
         .modal {
@@ -111,42 +123,122 @@
     <div class="header">
         <div class="logo">SKL</div>
         <div>
-            <span>pracownik@winotex.pl</span>
+            <span>jan.kowalski@winotex.pl</span>
             <a href="index.html" class="btn">Wyloguj się</a>
         </div>
     </div>
     <div class="content">
         <div class="sidebar">
-            <a href="#" class="btn">Dodaj Beczkę</a>
-            <a href="#" class="btn" id="searchBarrelsBtn">Szukaj Beczki</a>
+            <a href="#" class="active">Beczki</a>
+            <a href="location-database.html">Lokalizacje</a>
         </div>
-        <div class="main-content">
-            <h2>Panel Pracownika - Beczki</h2>
+        <div class="data-table">
+            <h2>Baza danych - Beczki</h2>
+            <a href="add-barrel.html" class="btn">Dodaj beczkę</a>
+            <a href="#" class="btn" id="searchBarrelsBtn">Szukaj Beczki</a>
             <table>
                 <thead>
                     <tr>
-                        <th>ID</th>
-                        <th>Opis</th>
-                        <th>Dni do zakończenia</th>
+                        <th>nrBeczki</th>
+                        <th>rodzajBeczki</th>
+                        <th>rodzajWina</th>
+                        <th>dataRozpoczęcia</th>
+                        <th>dataZakończenia</th>
+                        <th>czyZakończone</th>
+                        <th>Akcje</th>
                     </tr>
                 </thead>
                 <tbody id="barrelTable">
                     <tr>
                         <td>1</td>
-                        <td>Beczka dębowa</td>
-                        <td>15</td>
+                        <td>Dębowa</td>
+                        <td>Czerwone</td>
+                        <td>2022-01-15</td>
+                        <td>2024-01-15</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
                     </tr>
                     <tr>
                         <td>2</td>
-                        <td>Beczka sosnowa</td>
-                        <td>10</td>
+                        <td>Akacjowa</td>
+                        <td>Białe</td>
+                        <td>2021-06-20</td>
+                        <td>2023-06-20</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
                     </tr>
                     <tr>
                         <td>3</td>
-                        <td>Beczka bukowa</td>
-                        <td>7</td>
+                        <td>Dębowa</td>
+                        <td>Różowe</td>
+                        <td>2023-03-10</td>
+                        <td>2024-06-13</td>
+                        <td>false</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
                     </tr>
-                    <!-- Additional rows for barrels -->
+                    <tr>
+                        <td>4</td>
+                        <td>Wiśniowa</td>
+                        <td>Musujące</td>
+                        <td>2020-11-05</td>
+                        <td>2022-11-05</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Dębowa</td>
+                        <td>Czerwone</td>
+                        <td>2022-07-30</td>
+                        <td>2024-06-12</td>
+                        <td>false</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Akacjowa</td>
+                        <td>Białe</td>
+                        <td>2021-08-12</td>
+                        <td>2023-08-12</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>7</td>
+                        <td>Dębowa</td>
+                        <td>Różowe</td>
+                        <td>2023-01-25</td>
+                        <td>2024-06-10</td>
+                        <td>false</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>8</td>
+                        <td>Wiśniowa</td>
+                        <td>Musujące</td>
+                        <td>2020-05-18</td>
+                        <td>2022-05-18</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>9</td>
+                        <td>Dębowa</td>
+                        <td>Czerwone</td>
+                        <td>2022-11-11</td>
+                        <td>2024-06-10</td>
+                        <td>false</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
+                    <tr>
+                        <td>10</td>
+                        <td>Akacjowa</td>
+                        <td>Białe</td>
+                        <td>2021-02-03</td>
+                        <td>2023-02-03</td>
+                        <td>true</td>
+                        <td><a href="edit-barrel.html" class="btn">Edytuj</a></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
@@ -161,59 +253,42 @@
     </div>
 
     <script>
-        // Get modal elements
-        var modal = document.getElementById("myModal");
-        var modalText = document.getElementById("modalText");
-        var span = document.getElementsByClassName("close")[0];
+        document.getElementById('searchBarrelsBtn').onclick = function() {
+            const rows = Array.from(document.querySelectorAll('#barrelTable tr'));
+            const now = new Date();
+            const barrels = rows
+                .map(row => {
+                    const cells = row.querySelectorAll('td');
+                    return {
+                        id: cells[0].innerText,
+                        endDate: new Date(cells[4].innerText)
+                    };
+                })
+                .filter(barrel => {
+                    const timeDiff = barrel.endDate - now;
+                    const daysLeft = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+                    return daysLeft <= 7;
+                });
+            
+            const randomBarrels = barrels
+                .sort(() => 0.5 - Math.random())
+                .slice(0, 2)
+                .map(barrel => `Beczka ID: ${barrel.id}, kończy za ${Math.ceil((barrel.endDate - now) / (1000 * 60 * 60 * 24))} dni`);
 
-        // Function to open modal
-        function openModal(message) {
-            modalText.innerText = message;
-            modal.style.display = "block";
-        }
+            document.getElementById('modalText').innerText = `Te beczki kończą proces leżakowania:\n\n${randomBarrels.join('\n')}`;
 
-        // Close modal when user clicks on <span> (x)
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
+            document.getElementById('myModal').style.display = "block";
+        };
 
-        // Close modal when user clicks anywhere outside of the modal
+        document.querySelector('.close').onclick = function() {
+            document.getElementById('myModal').style.display = "none";
+        };
+
         window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+            if (event.target == document.getElementById('myModal')) {
+                document.getElementById('myModal').style.display = "none";
             }
-        }
-
-        // Function to get random barrels
-        function getRandomBarrels() {
-            var barrels = document.querySelectorAll("#barrelTable tr");
-            var selectedBarrels = [];
-            var minDays = 7;
-
-            barrels.forEach(function(barrel) {
-                var days = parseInt(barrel.cells[2].innerText);
-                if (days >= minDays) {
-                    selectedBarrels.push({
-                        id: barrel.cells[0].innerText,
-                        days: days
-                    });
-                }
-            });
-
-            // Shuffle and get two random barrels
-            selectedBarrels.sort(() => 0.5 - Math.random());
-            return selectedBarrels.slice(0, 2);
-        }
-
-        // Add event listener to "Szukaj Beczki" button
-        document.getElementById("searchBarrelsBtn").addEventListener("click", function() {
-            var randomBarrels = getRandomBarrels();
-            var message = "Te beczki kończą proces leżakowania:\n\n";
-            randomBarrels.forEach(function(barrel) {
-                message += "ID: " + barrel.id + ", za " + barrel.days + " dni\n";
-            });
-            openModal(message);
-        });
+        };
     </script>
 </body>
 </html>
